@@ -1,6 +1,7 @@
 name: f_count
 description: A dart equivalent of console.count() in JS
 version: 0.0.1
+homepage: https://github.com/Chinmay-KB/f_count
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
