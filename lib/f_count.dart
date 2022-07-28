@@ -1,9 +1,10 @@
 library f_count;
 
 import 'dart:collection';
+import 'dart:convert';
 import 'dart:developer';
 
-import 'package:stack_trace/stack_trace.dart';
+import 'package:crypto/crypto.dart';
 
 final Map<String, int> _callCounts = HashMap();
 
@@ -11,16 +12,16 @@ final Map<String, int> _callCounts = HashMap();
 /// To learn about how `console.count() works in JS, go through the
 /// [MDN Docs]:https://developer.mozilla.org/en-US/docs/Web/API/console/count
 String fCount(String? label) {
-  final trace = Trace.from(StackTrace.current);
-  final callLocation = trace.frames[2].location;
+  final stackBytes = utf8.encode(StackTrace.current.toString());
+  final locationHash = sha1.convert(stackBytes).toString();
 
-  if (_callCounts.containsKey(callLocation)) {
-    _callCounts.update(callLocation, (value) => _callCounts[callLocation]! + 1);
+  if (_callCounts.containsKey(locationHash)) {
+    _callCounts.update(locationHash, (value) => _callCounts[locationHash]! + 1);
   } else {
-    _callCounts[callLocation] = 1;
+    _callCounts[locationHash] = 1;
   }
   final logMessage =
-      '${label ?? callLocation} rendered ${_callCounts[callLocation]} times';
+      '${label ?? locationHash} rendered ${_callCounts[locationHash]} times';
   log(logMessage);
   return logMessage;
 }
