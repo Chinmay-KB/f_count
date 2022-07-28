@@ -10,7 +10,7 @@ class GoodHomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           key: const ValueKey('good_appbar'),
-          title: Text('Good Appbar'),
+          title: const Text('Good Appbar'),
         ),
         body: const Center(
           child: GoodCounterWidget(),

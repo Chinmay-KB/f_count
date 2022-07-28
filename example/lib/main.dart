@@ -1,5 +1,4 @@
 import 'package:example/bad_homepage.dart';
-import 'package:f_count/f_count.dart';
 import 'package:flutter/material.dart';
 
 void main() {
