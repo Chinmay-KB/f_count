@@ -6,11 +6,10 @@ class GoodHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    fCount('Good homepage');
     return Scaffold(
         appBar: AppBar(
           key: const ValueKey('good_appbar'),
-          title: const Text('Good Appbar'),
+          title: Text(fCount(label: 'Good Appbar')),
         ),
         body: const Center(
           child: GoodCounterWidget(),
@@ -36,12 +35,11 @@ class _GoodCounterWidgetState extends State<GoodCounterWidget> {
 
   @override
   Widget build(BuildContext context) {
-    fCount('good widget');
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        const Text(
-          'You have pushed the button this many times:',
+        Text(
+          fCount(label: 'good widget, rightfully '),
         ),
         Text(
           '$_counter',

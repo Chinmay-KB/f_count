@@ -21,18 +21,17 @@ class _BadHomePageState extends State<BadHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    fCount('Bad homepage');
     return Scaffold(
       appBar: AppBar(
         key: const ValueKey('bad_appbar'),
-        title: const Text('Bad Homepage'),
+        title: Text(fCount(label: 'Uselessly')),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text(
+              fCount(label: 'Useful stuff'),
             ),
             Text(
               '$_counter',
