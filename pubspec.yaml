@@ -1,6 +1,6 @@
 name: f_count
 description: A dart equivalent of console.count() in JS. This can be used to check for unwanted re-renders inside the build method of a widget
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/Chinmay-KB/f_count
 
 environment:
